@@ -178,7 +178,7 @@ async function main(): Promise<void> {
     status_string = `${workflow_msg} ${context.actor}'s \`pull_request\` ${pull_requests}`
   }
 
-  const commit_message = `Commit: ${workflow_run.head_commit.message}`
+  const commit_message = workflow_run.head_commit ? `Commit: ${workflow_run.head_commit.message}` : 'Commit information not available'
 
   // We're using old style attachments rather than the new blocks because:
   // - Blocks don't allow colour indicators on messages
