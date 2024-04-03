@@ -79,7 +79,7 @@ async function main(): Promise<void> {
   })
 
   // Fetch workflow job information
-  const {data: jobs_response} = await octokit.actions.listJobsForWorkflowRun({
+  const {data: jobs_response} = await octokit.rest.actions.listJobsForWorkflowRun({
     owner: context.repo.owner,
     repo: context.repo.repo,
     run_id: context.runId,
