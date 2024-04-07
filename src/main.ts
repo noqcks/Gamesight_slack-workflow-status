@@ -139,7 +139,7 @@ async function main(): Promise<void> {
 
     const job_duration = compute_duration({
       start: new Date(job.started_at),
-      end: new Date(job.completed_at)
+      end: job.completed_at ? new Date(job.completed_at) : new Date()
     })
 
     return {
