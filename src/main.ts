@@ -97,7 +97,7 @@ async function main(): Promise<void> {
   let job_fields: SlackMessageAttachementFields
 
   if (
-    completed_jobs.every(job => ['success', 'skipped'].includes(job.conclusion))
+    completed_jobs.every(job => ['success', 'skipped'].includes(job.conclusion as string))
   ) {
     workflow_color = 'good'
     workflow_msg = 'Success:'
