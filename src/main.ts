@@ -72,7 +72,7 @@ async function main(): Promise<void> {
   // Auth github with octokit module
   const octokit = getOctokit(github_token)
   // Fetch workflow run data
-  const {data: workflow_run} = await octokit.actions.getWorkflowRun({
+  const {data: workflow_run} = await octokit.rest.actions.getWorkflowRun({
     owner: context.repo.owner,
     repo: context.repo.repo,
     run_id: context.runId
